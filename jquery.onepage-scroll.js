@@ -1,5 +1,5 @@
 /* ===========================================================
- * jquery-onepage-scroll.js v1.3.2
+ * jquery-onepage-scroll.js v1.3.1
  * ===========================================================
  * Copyright 2013 Pete Rojwongsuriya.
  * http://www.thepetedesign.com
@@ -196,8 +196,9 @@
         }
 
         $.fn.moveTo = function (page_index) {
-            current = $(settings.sectionContainer + ".active")
-            next = $(settings.sectionContainer + "[data-index='" + (page_index) + "']");
+            var current = $(settings.sectionContainer + ".active"),
+                pos = 0,
+                next = $(settings.sectionContainer + "[data-index='" + (page_index) + "']");
             if (next.length > 0) {
                 if (typeof settings.beforeMove == 'function') settings.beforeMove(next.data("index"));
                 current.removeClass("active")
